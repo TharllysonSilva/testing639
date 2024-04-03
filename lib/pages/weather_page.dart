@@ -12,7 +12,7 @@ class WeatherPage extends StatefulWidget {
 
 class _WeatherPageState extends State<WeatherPage> {
   //api key
-  final _weatherService = WeatherService('2b37b2d2aff0224dd97e6b35bc709288');
+  final _weatherService = WeatherService('4156ef8b2080286c23aa210cb8823ff8');
   Weather? _weather;
 
   //fetch weather
@@ -71,6 +71,7 @@ class _WeatherPageState extends State<WeatherPage> {
     _fetchWeather();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
