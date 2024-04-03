@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:testing639/models/weather_model.dart';
@@ -71,9 +72,21 @@ class _WeatherPageState extends State<WeatherPage> {
     _fetchWeather();
   }
 
+  void signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: signUserOut,
+            icon: Icon(Icons.logout_outlined),
+          ),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
