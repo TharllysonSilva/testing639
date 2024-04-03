@@ -81,7 +81,7 @@ class _WeatherPageState extends State<WeatherPage> {
             Text(_weather?.cityName ?? "Loading city.."),
 
             //animation
-            Lottie.asset('assets/rain.json'),
+            Lottie.asset(getWeatherAnimation(_weather?.mainCondition)),
 
             //temperature
             Text('${_weather?.temperature.round()}°C'),
