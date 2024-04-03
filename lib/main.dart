@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:testing639/pages/login_page.dart';
 import 'package:testing639/pages/weather_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:testing639/firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MyApp());
 }
 
