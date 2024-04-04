@@ -1,11 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:testing639/components/my_drawer.dart';
 import 'package:testing639/models/weather_model.dart';
+import 'package:testing639/pages/profile_page.dart';
 import 'package:testing639/services/weather_service.dart';
 
 class WeatherPage extends StatefulWidget {
-  const WeatherPage({super.key});
+  const WeatherPage({super.key, required void onTap});
 
   @override
   State<WeatherPage> createState() => _WeatherPageState();
@@ -76,16 +78,26 @@ class _WeatherPageState extends State<WeatherPage> {
     FirebaseAuth.instance.signOut();
   }
 
+  void goToProfilePage() {
+    Navigator.pop(context);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ProfilePage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //extendBodyBehindAppBar: true,
       appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: signUserOut,
-            icon: Icon(Icons.logout_outlined),
-          ),
-        ],
+        backgroundColor: Colors.grey[900],
+        //  elevation: 0,
+      ),
+      drawer: MyDrawer(
+        onProfileTap: goToProfilePage,
+        onSignOut: signUserOut,
       ),
       body: Center(
         child: Column(
