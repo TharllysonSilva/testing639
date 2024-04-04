@@ -72,7 +72,7 @@ class _LoginPageState extends State<RegisterPage> {
                   ),
                 ),
                 Text(
-                  'Seja bem-vindo ao Weather',
+                  'Cadastre-se agora no Weather',
                   style: TextStyle(
                     color: Colors.grey[700],
                     fontSize: 16,
