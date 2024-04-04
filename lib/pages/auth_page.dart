@@ -14,9 +14,7 @@ class AuthPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return WeatherPage(
-              onTap: Navigator.pop(context),
-            );
+            return LoginPage();
           } else {
             return LoginOrResgiterPage();
           }
