@@ -7,7 +7,7 @@ import 'package:testing639/pages/profile_page.dart';
 import 'package:testing639/services/weather_service.dart';
 
 class WeatherPage extends StatefulWidget {
-  const WeatherPage({super.key, required void onTap});
+  const WeatherPage({super.key});
 
   @override
   State<WeatherPage> createState() => _WeatherPageState();

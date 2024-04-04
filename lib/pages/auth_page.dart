@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:testing639/pages/login_or_resgiter_page.dart';
 import 'package:testing639/pages/login_page.dart';
 import 'package:testing639/pages/weather_page.dart';
 
@@ -14,9 +13,9 @@ class AuthPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return LoginPage();
+            return const WeatherPage();
           } else {
-            return const LoginOrResgiterPage();
+            return LoginPage();
           }
         },
       ),
