@@ -16,7 +16,7 @@ class _LoginPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() async {
+  void signUserUp() async {
     showDialog(
         context: context,
         builder: (context) {
@@ -66,8 +66,8 @@ class _LoginPageState extends State<RegisterPage> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(100, 100, 100, 20),
                   child: SizedBox(
-                    width: 100,
-                    height: 100,
+                    width: 50,
+                    height: 50,
                     child: Image.asset('assets/icon.png'),
                   ),
                 ),
@@ -79,7 +79,7 @@ class _LoginPageState extends State<RegisterPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 25,
+                  height: 10,
                 ),
 
                 //user textfield
@@ -91,12 +91,21 @@ class _LoginPageState extends State<RegisterPage> {
                 ),
 
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 //password textfield
                 MyTextField(
                   controller: passwordController,
                   hintText: 'Senha',
+                  obscureText: true,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                //password textfield
+                MyTextField(
+                  controller: passwordController,
+                  hintText: 'Confirmar Senha',
                   obscureText: true,
                 ),
 
@@ -117,7 +126,7 @@ class _LoginPageState extends State<RegisterPage> {
                   ),
                 ),
                 MyButton(
-                  onTap: signUserIn,
+                  onTap: signUserUp,
                 ),
                 const SizedBox(
                   height: 50,
@@ -163,14 +172,14 @@ class _LoginPageState extends State<RegisterPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Não é membro?',
+                      'Você já é membro?',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(
                       onTap: widget.onTap,
                       child: const Text(
-                        'Resgistre agora',
+                        'Login',
                         style: TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
