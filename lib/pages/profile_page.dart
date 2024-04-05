@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:testing639/components/text_box.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -11,6 +12,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   final currentUser = FirebaseAuth.instance.currentUser!;
 
+  Future<void> editField(String field) async {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +47,11 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
           //user name
+          MyTextBox(
+            text: 'text',
+            sectionName: 'test639@gmail.com',
+            onPressed: () => editField('username'),
+          ),
         ],
       ),
     );
