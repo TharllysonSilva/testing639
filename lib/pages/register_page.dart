@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+/*import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:testing639/components/my_botton.dart';
 import 'package:testing639/components/my_textfield.dart';
@@ -205,4 +205,4 @@ class _LoginPageState extends State<RegisterPage> {
       ),
     );
   }
-}
+}*/

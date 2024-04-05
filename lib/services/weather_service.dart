@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class WeatherService {
   // ignore: constant_identifier_names
-  static const BASE_URL = 'http://api.openweathermap.org/data/3.0/weather';
+  static const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
   final String apiKey;
 
   WeatherService(this.apiKey);
