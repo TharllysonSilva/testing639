@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:testing639/pages/login_page.dart';
-import 'package:testing639/pages/register_page.dart';
-import 'package:testing639/pages/weather_page.dart';
+import 'package:testing639/screens/login_page.dart';
+import 'package:testing639/screens/register_page.dart';
+import 'package:testing639/screens/weather_page.dart';
 
 class LoginOrResgiterPage extends StatefulWidget {
   const LoginOrResgiterPage({super.key});
@@ -22,7 +22,7 @@ class _LoginOrResgiterPageState extends State<LoginOrResgiterPage> {
   @override
   Widget build(BuildContext context) {
     if (showLoginPage) {
-      return WeatherPage();
+      return const WeatherPage();
     } else {
       return LoginPage(
         onTap: togglePage,

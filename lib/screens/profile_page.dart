@@ -17,14 +17,14 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile Page'),
+        title: const Text('Profile Page'),
         backgroundColor: Colors.grey[900],
       ),
       body: ListView(
         //profile pic
         children: [
           const SizedBox(height: 50),
-          Icon(
+          const Icon(
             Icons.person,
             size: 72,
           ),

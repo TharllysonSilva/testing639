@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:testing639/pages/auth_page.dart';
-import 'package:testing639/pages/login_page.dart';
-import 'package:testing639/pages/weather_page.dart';
+import 'package:testing639/screens/auth_page.dart';
+import 'package:testing639/screens/login_page.dart';
+import 'package:testing639/screens/weather_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:testing639/firebase_options.dart';
 
