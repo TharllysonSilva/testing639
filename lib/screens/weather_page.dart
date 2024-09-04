@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:testing639/components/my_drawer.dart';
-import 'package:testing639/models/weather_model.dart';
+import 'package:testing639/models/weather_response.dart';
 import 'package:testing639/screens/profile_page.dart';
 import 'package:testing639/services/weather_service.dart';
 
@@ -14,8 +14,8 @@ class WeatherPage extends StatefulWidget {
 }
 
 class _WeatherPageState extends State<WeatherPage> {
-  final _weatherService = WeatherService('4156ef8b2080286c23aa210cb8823ff8');
-  Weather? _weather;
+  final _weatherService = WeatherService('f2c3efe91d148e757aea0a6d8b50b26f');
+  WeatherResponse? _weather;
 
   _fetchWeather() async {
     String cityName = await _weatherService.getCurrentCity();
@@ -26,6 +26,7 @@ class _WeatherPageState extends State<WeatherPage> {
         _weather = weather;
       });
     } catch (e) {
+      // ignore: avoid_print
       print(e);
     }
   }
@@ -84,10 +85,10 @@ class _WeatherPageState extends State<WeatherPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //extendBodyBehindAppBar: true,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.grey[900],
-        //  elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 1,
       ),
       drawer: MyDrawer(
         onProfileTap: goToProfilePage,
@@ -98,16 +99,17 @@ class _WeatherPageState extends State<WeatherPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //city Name
-            Text(_weather?.cityName ?? "Loading city.."),
+            Text(_weather?.timezone ?? "Loading city.."),
 
             //animation
-            Lottie.asset(getWeatherAnimation(_weather?.mainCondition)),
+            Lottie.asset(getWeatherAnimation(
+                _weather?.currentModel.currentWeatherModel.first.main)),
 
             //temperature
-            Text('${_weather?.temperature.round()}°C'),
+            Text('${_weather?.currentModel.temp.round()}°C'),
 
             //weather condition
-            Text(_weather?.mainCondition ?? ""),
+            Text(_weather?.currentModel.currentWeatherModel.first.main ?? ""),
           ],
         ),
       ),
