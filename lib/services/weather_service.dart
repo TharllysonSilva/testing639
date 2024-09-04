@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:testing639/models/weather_model.dart';
+
 import 'package:http/http.dart' as http;
+import 'package:testing639/models/weather_response.dart';
 
 class WeatherService {
   // ignore: constant_identifier_names
@@ -12,12 +13,12 @@ class WeatherService {
 
   WeatherService(this.apiKey);
 
-  Future<Weather> getWeather(String cityName) async {
+  Future<WeatherResponse> getWeather(String cityName) async {
     final response = await http
-        .get(Uri.parse('$BASE_URL?q=$cityName&appid=apiKey&units=metric'));
+        .get(Uri.parse('$BASE_URL?q=$cityName&appid=$apiKey&units=metric'));
 
     if (response.statusCode == 200) {
-      return Weather.fromJson(jsonDecode(response.body));
+      return WeatherResponse.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to load weather data');
     }
