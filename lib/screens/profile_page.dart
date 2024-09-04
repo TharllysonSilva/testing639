@@ -18,7 +18,8 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile Page'),
-        backgroundColor: Colors.grey[900],
+        //titleTextStyle: TextStyle(color: Colors.white),
+        backgroundColor: Colors.grey[500],
       ),
       body: ListView(
         //profile pic
@@ -49,7 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
           //user name
           MyTextBox(
             text: 'text',
-            sectionName: 'test639@gmail.com',
+            sectionName: '${currentUser.email}',
             onPressed: () => editField('username'),
           ),
         ],

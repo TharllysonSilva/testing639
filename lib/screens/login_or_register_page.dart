@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:testing639/screens/login_page.dart';
-import 'package:testing639/screens/register_page.dart';
 import 'package:testing639/screens/weather_page.dart';
 
 class LoginOrResgiterPage extends StatefulWidget {
